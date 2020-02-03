@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% load widget_tweaks %}
+<form method="post" action="">{% csrf_token %}
+<table border="0" width="100%">
+    <tr><td><h1>Matrix A</h1> You can copy and paste your neutrosophic matrix here.<br>
+        each elment in form of <[TL,TU],[IL,IU],[FL,FU]> <br> use <b>double</b>
+        space between elements and use<b> new line</b> fro new row.
+        <br> Matrix A and B must have the same <size class=""></size>
+    </td><td><h1>Matrix B </h1></td></tr>
+    <tr><td> {{ form.A  }} </td><td>{{ form.B  }}</td></tr>
+    <tr><td> The  Scalar (used as Power, product and division scalar . Default is 1 ): {{ form.productScalar }}</td><td> </td></tr>
+
+    <tr><td><input type="submit" name="Back" value="Back" /> </td><td> <input type="submit" name="output" value="output" /></td></tr>
+
+</table>
+
+</form>
+<table border="1" width="100%">
+    <caption><td width="20%">Functione Name </td><td width="40%">Matrix A</td><td width="40%">Matrix B</td></caption>
+    <tr><td>Matrix Output Text</td><td><pre> {{ Aoutput }} </pre></td><td><pre> {{ Boutput }} </pre></td></tr>
+    <tr><td>No. of Rows</td><td>{{ rowscountA }}</td><td>{{ rowscountB }}</td></tr>
+    <tr><td>No. of columns</td><td>{{ colscountA }}</td><td>{{ colscountA }}</td></tr>
+    <tr><td>Number of Empty Values</td><td>{{ emptynumA }}</td><td>{{ emptynumA }}</td></tr>
+    <tr><td>complement</td><td> <pre> {{ compAtext }} </pre></td><td><pre> {{ compBtext }} </pre></td></tr>
+    <tr><td>productScalar</td><td><pre> {{ productScalar }}</pre></td><td><pre> {{ productScalarB }}</pre></td></tr>
+    <tr><td>Div Scalar</td><td><pre>{{ divScalar }} </pre></td><td><pre>{{ divScalarB }} </pre></td></tr>
+    <tr><td>Karasan score</td><td><pre>{{ karasanA }} </pre></td><td><pre>{{ karasanB }} </pre></td></tr>
+    <tr><td>Nancy Score</td><td><pre>{{ nancyA }} </pre></td><td><pre>{{ nancyB }} </pre></td></tr>
+    <tr><td>Ridvan Score</td><td><pre>{{ ridvanA }} </pre></td><td><pre>{{ ridvanB }} </pre></td></tr>
+    <tr><td> Power Scalar</td><td><pre>{{ powerA }} </pre></td><td><pre>{{ powerB }} </pre></td></tr>
+    <tr><td>Intersection</td><td colspan="2" align="center"><pre>{{ intersection }} </pre></td></tr>
+    <tr><td>Union</td><td colspan="2" align="center"><pre>{{ union }} </pre></td></tr>
+    <tr><td>Addition A + B</td><td colspan="2" align="center"><pre>{{ addition }} </pre></td></tr>
+    <tr><td>Difference A - B</td><td colspan="2" align="center"><pre>{{ diff }} </pre></td></tr>
+    <tr><td>Karasan Difference A - B</td><td colspan="2" align="center"><pre>{{ diffk }} </pre></td></tr>
+    <tr><td>Product A * B</td><td colspan="2" align="center"><pre>{{ product }} </pre></td></tr>
+</table>
+
+
+</body>
+</html>

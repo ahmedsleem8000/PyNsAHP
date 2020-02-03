@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+      <title>Neutrosophic  AHP </title>
+  </head>
+  <body>
+  <div class="container">
+  <h3>Neutrosophic Sets and Systems  Projects</h3>
+  <p>Projects Implemented by Python.</p>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/ivns">IVNS Operations </a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link" href="/ivns/norm">Neoutrosophic Matrix Normalization</a>
+    </li>
+       <li class="nav-item active">
+      <a class="nav-link" href="/ivns/ahp">Neutrosophic AHP</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/ivns/similarity" >Neutrosophic similarity</a>
+    </li>
+
+  </ul>
+</nav>
+
+
+<div class="container">
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <h1 class="mt-2"> Neutrosophic  AHP </h1>
+          <hr class="mt-0 mb-4">
+        You can copy and paste your neutrosophic matrix here.<br>
+        each elment in form of <[TL,TU],[IL,IU],[FL,FU]> <br> use <b>double</b>
+        space between elements and use<b> new line</b> for new row.
+
+
+
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+
+
+
+
+<form method="post" action="">{% csrf_token %}
+<table border="0" width="80%" align="center">
+    <tr><td width="80%"><h5>Enter Matrix </h5>
+    </td><td width="20%"><h1> </h1></td></tr>
+    <tr><td> {{ form.matrix  }} </td><td> </td></tr>
+     <tr><td align="center">
+    <button type="submit" class="btn btn-primary" name="AHP">AHP </button>
+
+    </td>
+
+</table>
+
+    <div>
+        <p align="center">
+            <label for="result"><h4 align="center">Columns Sum :</h4></label></p>
+
+        <p align="center"><textarea  rows="8" cols="160" id="result" cols="40">{{ result }}</textarea></p>
+         <label for="result"><h4 align="center">divided by columns sum:</h4></label></p>
+        <p align="center"><textarea  rows="8" cols="160" id="result" cols="40">{{ result2 }}</textarea></p>
+         <label for="result"><h4 align="center">Criteria Weight: </h4></label></p>
+  <p align="center"><textarea  rows="8" cols="160" id="result" cols="40">{{ result3 }}</textarea></p>
+
+            <label for="result"><h4 align="center">Original matrix Times Criteria Weight: </h4></label></p>
+  <p align="center"><textarea  rows="8" cols="160" id="result" cols="40">{{ result4 }}</textarea></p>
+
+            <label for="result"><h4 align="center">DeNutrosophic Values </h4></label></p>
+  <p align="center"><textarea  rows="8" cols="160" id="result" cols="40">{{ result5 }}</textarea></p>
+         <label for="result"><h4 align="center">Row Summition </h4></label></p>
+  <p align="center"><textarea  rows="2" cols="160" id="result" cols="40">{{ result6 }}</textarea></p>
+
+ <label for="result"><h4 align="center"> Consistancy Ratio :</h4></label></p>
+  <p align="center"><textarea  rows="2" cols="160" id="result" cols="40">{{ result7 }}</textarea></p>
+
+</div>
+
+
+</form>
+
+
+  </body>
+</html>
